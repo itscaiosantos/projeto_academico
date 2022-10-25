@@ -1,22 +1,24 @@
 <?php 
 
-  if (isset($_POST['submit'])) 
+
+  if (isset($_GET['submit'])) 
   {
+      echo 'ryjytytgfyjhtgjg';
       include_once('config.php');
 
-      $nome = $_POST['nome'];
-      $senha = $_POST['senha'];
-      $email = $_POST['email'];
-      $telefone = $_POST['telefone'];
-      $genero = $_POST['genero'];
-      $data_nascimento = $_POST['data_nascimento'];
-      $estado = $_POST['estado'];
-      $cidade = $_POST['cidade'];
-      $endereco = $_POST['endereco'];
+      $nome = $_GET['nome'];
+      $senha = $_GET['senha'];
+      $email = $_GET['email'];
+      $telefone = $_GET['telefone'];
+      $genero = $_GET['genero'];
+      $data_nascimento = $_GET['data_nascimento'];
+      $estado = $_GET['estado'];
+      $cidade = $_GET['cidade'];
+      $endereco = $_GET['endereco'];
 
-      $result = mysql_query($pdo, "INSERT INTO usuarios(nome, senha, email, telefone, genero, data_nascimento, estado, cidade, endereco)
-      VALUES ('$nome','$senha','$email','$telefone','$genero','$data_nascimento','$estado','$cidade','$endereco')");
-      
+      $result = $pdo->query("INSERT INTO usuarios(nome, senha, email, telefone, genero, data_nascimento, estado, cidade, endereco) VALUES ('$nome','$senha','$email','$telefone','$genero','$data_nascimento','$estado','$cidade','$endereco')");
+
+
   }
 
 ?>
@@ -116,7 +118,7 @@
 </head>
 <body>
     <div class="box">
-        <form action="">
+        <form action="cadastro.php" method="get">
             <fieldset>
             <legend><b>Formulário do Cliente</b></legend><br>
 
