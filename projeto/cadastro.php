@@ -1,9 +1,7 @@
 <?php 
 
-
   if (isset($_GET['submit'])) 
   {
-      echo 'ryjytytgfyjhtgjg';
       include_once('config.php');
 
       $nome = $_GET['nome'];
@@ -18,7 +16,6 @@
 
       $result = $pdo->query("INSERT INTO usuarios(nome, senha, email, telefone, genero, data_nascimento, estado, cidade, endereco) VALUES ('$nome','$senha','$email','$telefone','$genero','$data_nascimento','$estado','$cidade','$endereco')");
 
-
   }
 
 ?>
@@ -31,6 +28,7 @@
     <meta name="viewport" content="width=<div>, initial-scale=1.0">
     <title>Cadastro</title>
     <style>
+    
         body{
         font-family: Arial, Helvetica, sans-serif;
         background-image: linear-gradient(45deg, purple, cyan);
