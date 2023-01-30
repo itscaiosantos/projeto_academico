@@ -7,7 +7,6 @@
       
          @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap');
          
-         
          *{
             padding: 0;
             margin: 0;
@@ -75,14 +74,27 @@
          <h1>CADASTRE SEU CONTATO</h1>
          <form action="?" method="POST">
             <label for="nome">Nome</label><br>
-            <input type="text" name="nome" class="input" placeholder="Digite seu nome..."/><br>
+            <input type="text" id="n" class="input" placeholder="Digite seu nome..."/><br>
             <label for="numero">Número</label><br>
-            <input type="number" name="numero" class="input" placeholder="Digite seu numero..." /><br>
-            <button type="submit" id="btn">Cadastrar &#10003;</button><br>
+            <input type="number" id= "num" class="input" placeholder="Digite seu numero..." /><br>
+            <button id="btn" onclick='aviso()'>Cadastrar &#10003;</button><br>
          </form>
       </div>
       <footer>
           <p> &#169; Caio 2023</p>
       </footer>
+      <script>
+  
+         const aviso = () => {
+            
+            var inputName = document.querySelector('#n');
+            var inputNum = document.querySelector('#num');
+            var nome = inputName.value;
+            var num = inputNum.value;
+            
+            alert(`Olá ${nome} seu numero: ${num} foi agendado com sucesso em nosso banco de dados!`);
+         }
+         
+      </script>
    </body>
 </html>
